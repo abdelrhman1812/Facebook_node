@@ -22,6 +22,14 @@ app.use('/posts', postsRouter)
 app.use('/comments', commentRouter)
 
 
+// استخدم إعدادات CORS
+app.use(cors({
+    origin: 'https://facebook-node-9sqd.onrender.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
+
+
 /* Err Handel Routes */
 app.use('*', (req, res, next) => {
     // res.status(404).json({ message: `route not found ${req.originalUrl}` })

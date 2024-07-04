@@ -67,7 +67,6 @@ const getSpecificUser = catchError(async (req, res) => {
 
 const uploadUserProfile = catchError(async (req, res) => {
     const userId = req.user.userId;
-    console.log(userId)
 
     // Find the user by their ID
     const user = await userModel.findByPk(userId);
